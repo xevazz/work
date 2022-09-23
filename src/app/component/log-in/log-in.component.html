@@ -1,0 +1,17 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form >
+
+                <div class="form-group">
+                    <input type="email" name="email" [(ngModel)]="id" placeholder="email" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="password" [(ngModel)]="pass" class="form-control" >
+                </div>
+                <button class="btn btn-success btn-block" (click)="confirmLogin(id,pass)">save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
