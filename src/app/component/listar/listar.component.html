@@ -1,6 +1,6 @@
 <div class="col-md-4" *ngFor="let dato of lista ">
     <div class="card text_center">
-        <button>{{dato.id}}</button>
+        <button routerLink="/inicio/id">{{dato.id}}</button>
         
         <div class="card_header bg-dark text-white d-flex justify-content-betwen align-item-center">
             {{dato.title}}
@@ -9,7 +9,7 @@
             {{dato.body}}
         </div>
         <div class="card-body">
-            <button class="btn btn-danger">eliminar</button>
+            <button class="btn btn-danger" (click)="eliminarUsuario(dato.id)">eliminar</button>
         </div>
     </div>
 </div>

@@ -25,6 +25,12 @@ export class DataService {
   }  
   crearNuevo(usuario:User){
     return this.http.post(this.API_URI2,usuario);
-  }     
+  }
+  eliminar(id: string){
+    return this.http.delete(this.API_URI2+'/'+id);
+  }
+  actualizar(usuario:User){
+    return this.http.put(this.API_URI2,usuario);
+  }   
 
 }

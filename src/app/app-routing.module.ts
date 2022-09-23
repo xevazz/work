@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LogInComponent } from "./component/log-in/log-in.component";
 import { InicioComponent} from "./component/inicio/inicio.component";
 import { AgregarComponent } from "./component/agregar/agregar.component";
+import { ActualizarComponent } from "./component/actualizar/actualizar.component";
+
 const routes: Routes = [
   {
     path:'',
@@ -21,6 +23,10 @@ const routes: Routes = [
   {
     path:'add',
     component:AgregarComponent
+  },
+  {
+    path:'inicio/id',
+    component:ActualizarComponent
   },
   
 ];

@@ -13,6 +13,7 @@ import { InicioComponent } from './component/inicio/inicio.component';
 import { LogoutComponent } from './component/logout/logout.component';
 import { ListarComponent } from './component/listar/listar.component';
 import { AgregarComponent } from './component/agregar/agregar.component';
+import { ActualizarComponent } from './component/actualizar/actualizar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AgregarComponent } from './component/agregar/agregar.component';
     InicioComponent,
     LogoutComponent,
     ListarComponent,
-    AgregarComponent
+    AgregarComponent,
+    ActualizarComponent
   ],
   imports: [
     BrowserModule,
