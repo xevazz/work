@@ -1,5 +1,6 @@
-<div class="col-md-4 offset-md-2">
+<div class="col-md-4 offset-md-4">
     <div class="card">
+        <h1>inicio de sesion</h1>
         <div class="card-body">
             <form >
 
@@ -9,7 +10,7 @@
                 <div class="form-group">
                     <input type="password" name="password" placeholder="password" [(ngModel)]="pass" class="form-control" >
                 </div>
-                <button class="btn btn-success btn-block" (click)="confirmLogin(id,pass)">save</button>
+                <button class="btn btn-success btn-block" (click)="confirmLogin(id,pass)" routerLink="/">save</button>
             </form>
         </div>
     </div>

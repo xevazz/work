@@ -1,6 +1,10 @@
-import { Component,HostBinding,ViewChild, OnInit } from '@angular/core';
+import { Component,HostBinding,Inject, OnInit } from '@angular/core';
 import { DataService } from "../../services/data.service";
 
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-listar',
@@ -12,6 +16,7 @@ export class ListarComponent implements OnInit {
   @HostBinding('class') clases = "row";
   lista: any;
   constructor(private DataService:DataService) { }
+  
   ngOnInit(): void {
     this.getLista();
   }
@@ -34,3 +39,4 @@ export class ListarComponent implements OnInit {
     )
   }
 }
+

@@ -6,10 +6,17 @@ import { InicioComponent} from "./component/inicio/inicio.component";
 import { AgregarComponent } from "./component/agregar/agregar.component";
 import { ActualizarComponent } from "./component/actualizar/actualizar.component";
 
+
+
 const routes: Routes = [
-  {
+  { 
     path:'',
-    redirectTo: '/inicio',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  { 
+    path:'inicio',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -30,6 +37,20 @@ const routes: Routes = [
   },
   
 ];
+
+if (sessionStorage.getItem('id')!=null) {
+  routes[0] =   { 
+    path:'',
+    redirectTo: '/inicio',
+    pathMatch: 'full'
+  };
+  routes[1] =   { 
+    path:'inicio',
+    redirectTo: '/inicio',
+    pathMatch: 'full'
+  };
+
+}
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

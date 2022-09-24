@@ -21,5 +21,8 @@ export class NavigationComponent implements OnInit {
       err => console.error(err)
     )
   }
+  logout(){
+    sessionStorage.clear();
+  }
 
 }

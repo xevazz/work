@@ -26,9 +26,16 @@ export class LogInComponent implements OnInit {
     this.dataService.login(id,pass).subscribe(
       res => {
         this.respuesta = res;
+        sessionStorage.setItem('userDetails', 'sad');
+        console.log(sessionStorage.getItem('id'));
       },
-      err => console.error(err)
+      err => {console.error(err);
+        sessionStorage.setItem('id', 'sad');
+        console.log(sessionStorage.getItem('id'));}
+
     )
   }
 
 }
+
+

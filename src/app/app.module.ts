@@ -14,6 +14,8 @@ import { LogoutComponent } from './component/logout/logout.component';
 import { ListarComponent } from './component/listar/listar.component';
 import { AgregarComponent } from './component/agregar/agregar.component';
 import { ActualizarComponent } from './component/actualizar/actualizar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,11 @@ import { ActualizarComponent } from './component/actualizar/actualizar.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,    
   ],
   providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
     DataService
   ],
   bootstrap: [AppComponent]
