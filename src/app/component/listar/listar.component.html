@@ -1,11 +1,11 @@
-<div class="col-md-4" *ngFor="let dato of lista ">
+<div class="col-md-4 t-3" *ngFor="let dato of lista ">
     <div class="card text_center btn btn-secondary">
         <button routerLink="/inicio/id">{{dato.id}}</button>
         
         <div class="card_header bg-dark text-white d-flex justify-content-betwen align-item-center">
             {{dato.title}}
         </div>
-        <div class="card-body">
+        <div class="card-body" style="color: black;">
             {{dato.body}}
         </div>
         <div class="card-body">
