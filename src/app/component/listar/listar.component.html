@@ -1,5 +1,5 @@
 <div class="col-md-4" *ngFor="let dato of lista ">
-    <div class="card text_center">
+    <div class="card text_center btn btn-secondary">
         <button routerLink="/inicio/id">{{dato.id}}</button>
         
         <div class="card_header bg-dark text-white d-flex justify-content-betwen align-item-center">
@@ -9,10 +9,25 @@
             {{dato.body}}
         </div>
         <div class="card-body">
-            <button class="btn btn-danger" (click)="eliminarUsuario(dato.id)">eliminar</button>
+            <button class="btn btn-danger" (click)="open(content)">eliminar</button>
         </div>
     </div>
 </div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">seguro que deseas eliminar</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="eliminarUsuario(lista.id)" (click)="modal.close('Save click')" >borrar</button>
+    </div>
+  </ng-template>
+    
+  <hr>
 
 
 

@@ -23,6 +23,7 @@ export class NavigationComponent implements OnInit {
   }
   logout(){
     sessionStorage.clear();
+    window.location.reload();
   }
 
 }

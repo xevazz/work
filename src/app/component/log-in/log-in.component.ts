@@ -1,5 +1,5 @@
 import { Component, HostBinding,OnInit } from '@angular/core';
-
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DataService } from "../../services/data.service";
 
 
@@ -13,10 +13,16 @@ export class LogInComponent implements OnInit {
   respuesta:any;
   id: any;
   pass: any;
-  
+  formulario: FormGroup | undefined;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private _fb: FormBuilder) { }
 
+  initForms() {
+    this.formulario = this._fb.group({
+      id: ['', Validators.required],
+      pass: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {
     
@@ -28,10 +34,17 @@ export class LogInComponent implements OnInit {
         this.respuesta = res;
         sessionStorage.setItem('userDetails', 'sad');
         console.log(sessionStorage.getItem('id'));
+        window.location.reload();
       },
       err => {console.error(err);
+
+        /////////////////se quita cuando la sesion este vinculada a la api
+
         sessionStorage.setItem('id', 'sad');
-        console.log(sessionStorage.getItem('id'));}
+        console.log(sessionStorage.getItem('id'));
+        window.location.reload();
+        /////////////
+      }
 
     )
   }

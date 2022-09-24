@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './component/log-in/log-in.component';
 
+
 import { DataService } from "./services/data.service";
 import { NavigationComponent } from './component/navigation/navigation.component';
 import { InicioComponent } from './component/inicio/inicio.component';
@@ -15,7 +16,8 @@ import { ListarComponent } from './component/listar/listar.component';
 import { AgregarComponent } from './component/agregar/agregar.component';
 import { ActualizarComponent } from './component/actualizar/actualizar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,10 +35,11 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule,    
+    BrowserAnimationsModule,
+    NgbModule,    
+    ReactiveFormsModule
   ],
   providers: [
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
     DataService
   ],
   bootstrap: [AppComponent]

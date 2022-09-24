@@ -1,5 +1,6 @@
 import { Component,HostBinding,Inject, OnInit } from '@angular/core';
 import { DataService } from "../../services/data.service";
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 export interface DialogData {
   animal: string;
@@ -14,9 +15,26 @@ export interface DialogData {
 
 export class ListarComponent implements OnInit {
   @HostBinding('class') clases = "row";
+  closeResult = '';
   lista: any;
-  constructor(private DataService:DataService) { }
-  
+  constructor(private DataService:DataService, private modalService: NgbModal) { }
+
+  open(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
   ngOnInit(): void {
     this.getLista();
   }
